@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: feedApp
+
+server:
+  port: 8081
