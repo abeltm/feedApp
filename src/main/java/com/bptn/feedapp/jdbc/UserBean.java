@@ -12,7 +12,7 @@ public class UserBean {
 	private String phone;
 	private String emailId;
 	private Boolean emailVerified;
-	private Timestamp createdOn;
+	private java.sql.Timestamp createdOn;
 	public Integer getUserId() {
 		return userId;
 	}
@@ -61,10 +61,10 @@ public class UserBean {
 	public void setEmailVerified(Boolean emailVerified) {
 		this.emailVerified = emailVerified;
 	}
-	public Timestamp getCreatedOn() {
+	public java.sql.Timestamp getCreatedOn() {
 		return createdOn;
 	}
-	public void setCreatedOn(Timestamp createdOn) {
+	public void setCreatedOn(java.sql.Timestamp createdOn) {
 		this.createdOn = createdOn;
 	}
 	@Override
