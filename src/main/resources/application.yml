@@ -3,14 +3,11 @@ logging.level:
     '[com.bptn.feedApp]': DEBUG
 
 server:
-  port: 8081
+  port: 8080
 
 spring:
   application:
     name: feedApp
-
-  profiles:
-    active: default
 
   config:
     activate:

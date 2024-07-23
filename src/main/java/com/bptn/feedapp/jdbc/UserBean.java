@@ -1,6 +1,6 @@
 package com.bptn.feedapp.jdbc;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class UserBean {
 	
@@ -12,7 +12,8 @@ public class UserBean {
 	private String phone;
 	private String emailId;
 	private Boolean emailVerified;
-	private java.sql.Timestamp createdOn;
+	private Timestamp createdOn;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -61,10 +62,11 @@ public class UserBean {
 	public void setEmailVerified(Boolean emailVerified) {
 		this.emailVerified = emailVerified;
 	}
-	public java.sql.Timestamp getCreatedOn() {
+	
+	public Timestamp getCreatedOn() {
 		return createdOn;
 	}
-	public void setCreatedOn(java.sql.Timestamp createdOn) {
+	public void setCreatedOn(Timestamp createdOn) {
 		this.createdOn = createdOn;
 	}
 	@Override
