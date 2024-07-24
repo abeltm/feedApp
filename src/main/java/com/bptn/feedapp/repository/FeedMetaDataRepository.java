@@ -6,6 +6,4 @@ import com.bptn.feedapp.jpa.FeedMetaData;
 
 public interface FeedMetaDataRepository extends JpaRepository<FeedMetaData, Integer> {
 	
-	
-	
 }
