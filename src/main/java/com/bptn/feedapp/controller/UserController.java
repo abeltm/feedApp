@@ -2,6 +2,8 @@ package com.bptn.feedapp.controller;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
@@ -111,6 +113,14 @@ public class UserController {
 			logger.debug("Sending Reset Password Email, emailId: {}", emailId);
 			
 			this.userService.sendResetPasswordEmail(emailId);
+	}
+	
+	@PostMapping("/reset")
+	public void passwordReset(@RequestBody JsonNode json) {
+
+		logger.debug("Resetting Password, password: {}", json.get("password").asText());
+
+		this.userService.resetPassword(json.get("password").asText());
 	}
 	
 }
