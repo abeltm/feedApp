@@ -123,12 +123,12 @@ public class UserController {
 		this.userService.resetPassword(json.get("password").asText());
 	}
 	
-	@GetMapping("/get")
-	public User getUser() {
+	@PostMapping("/update")
+	public User updateUser(@RequestBody User user) {
 			
-		logger.debug("Getting User Data");
+		logger.debug("Updating User Data");
 			
-		return this.userService.getUser();
+		return this.userService.updateUser(user);
 	}
 	
 }
