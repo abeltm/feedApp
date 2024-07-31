@@ -28,6 +28,7 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.HttpMethod.OPTIONS;
 
 @Component
+//class that defines the filter for JWT authorization
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
 	final Logger logger = LoggerFactory.getLogger(this.getClass());
