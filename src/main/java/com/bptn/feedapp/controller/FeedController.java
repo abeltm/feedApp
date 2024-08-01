@@ -18,6 +18,8 @@ import com.bptn.feedapp.service.FeedService;
 
 import com.bptn.feedapp.domain.PageResponse;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/feeds")
@@ -51,21 +53,29 @@ public class FeedController {
 
 		return this.feedService.getUserFeeds(pageNum, pageSize);
 	}
-	
+
 	@GetMapping("/other/{pageNum}/{pageSize}")
 	public PageResponse<Feed> getOtherUsersFeeds(@PathVariable int pageNum, @PathVariable int pageSize) {
-			
+
 		logger.debug("Getting Other Users Feeds List, pageNum: {}, pageSize: {}", pageNum, pageSize);
-			
-		return this.feedService.getOtherUsersFeeds(pageNum, pageSize);	
+
+		return this.feedService.getOtherUsersFeeds(pageNum, pageSize);
 	}
-	
+
 	@PostMapping("/meta/{feedId}")
 	public FeedMetaData createFeedMetaData(@PathVariable int feedId, @RequestBody FeedMetaData meta) {
-			
+
 		logger.debug("Creating FeedMetaData, feedId: {}", feedId);
-			
+
 		return this.feedService.createFeedMetaData(feedId, meta);
+	}
+
+	@DeleteMapping("/{feedId}")
+	public void deleteFeed(@PathVariable int feedId) {
+
+		logger.debug("Deleting Feed, feedId: {}", feedId);
+
+		this.feedService.deleteFeed(feedId);
 	}
 
 }
