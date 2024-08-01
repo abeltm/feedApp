@@ -1,6 +1,8 @@
 package com.bptn.feedapp.controller;
 
 import org.slf4j.Logger;
+
+import com.bptn.feedapp.jpa.FeedMetaData;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -56,6 +58,14 @@ public class FeedController {
 		logger.debug("Getting Other Users Feeds List, pageNum: {}, pageSize: {}", pageNum, pageSize);
 			
 		return this.feedService.getOtherUsersFeeds(pageNum, pageSize);	
+	}
+	
+	@PostMapping("/meta/{feedId}")
+	public FeedMetaData createFeedMetaData(@PathVariable int feedId, @RequestBody FeedMetaData meta) {
+			
+		logger.debug("Creating FeedMetaData, feedId: {}", feedId);
+			
+		return this.feedService.createFeedMetaData(feedId, meta);
 	}
 
 }
