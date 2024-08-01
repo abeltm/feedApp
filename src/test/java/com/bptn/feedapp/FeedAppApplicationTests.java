@@ -11,12 +11,12 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("test")
 class FeedAppApplicationTests {
 
-	@MockBean
-	Server server;
-
 	@DisplayName("Demo Test")
 	@Test
 	void contextLoads() {
 	}
 
+	@MockBean
+	Server server;
+	
 }

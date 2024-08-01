@@ -122,3 +122,11 @@ spring:
       settings:
         trace: false
         web-allow-others: true 
+        
+        # Mail Settings
+  mail:
+    host: jdbc:postgresql://localhost:5100/feedApp
+    port: 8080
+    username: postgres
+    password: postgres
+    protocol: smtp
